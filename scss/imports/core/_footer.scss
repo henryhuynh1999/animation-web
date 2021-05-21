@@ -1,0 +1,69 @@
+// css footer
+footer{
+    background-color: #050505;
+    height: 55px;
+    --text-cl-ft: #a5a5a5;
+    .container{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .backtotop{
+            color: var(--text-cl-ft);
+            font-family: pr;
+            font-size: 12px;
+            line-height: 83px;
+            cursor: pointer;
+        }
+        p{
+            font-family: pr;
+            font-size: 12px;
+            line-height: 20px;
+            color: var(--text-cl-ft);
+        }
+        a{
+            cursor: pointer;
+        }
+        
+    }
+}
+@media (max-width: 575px){
+    footer{
+        .container{
+            .backtotop{
+                font-size: 10px;
+            }
+            p{
+                font-size: 10px;
+            }
+            img{
+                width: 120px;
+            }
+        }
+    }
+}
+@media (max-width: 575px){
+    footer{
+        .container{
+            .backtotop{
+                font-size: 8px;
+            }
+            p{
+                font-size: 8px;
+                width: 80px;
+            }
+            img{
+                width: 100px;
+            }
+        }
+    }
+}
+@media (max-width: 321px){
+    footer{
+        .container{
+            img{
+                width: 80px;
+            }
+        }
+    }
+}

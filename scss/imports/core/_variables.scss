@@ -1,0 +1,55 @@
+/*primary colors*/
+$yellow-cl: #bea67c;
+$white-cl: #fff;
+$black-cl: #0e0e0e;
+
+/*global text color*/
+$text-cl: #010101;
+$text-black-cl: #000;
+$gray-cl: #464646;
+/*global bg color*/
+$main-bg-cl: #fff;
+$black-bg-cl: #0e0e0e;
+
+// timing transition
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+/*font families*/
+$font-stack: "Open Sans", sans-serif;
+$font-main: pr;
+
+/*headings typo*/
+$fz-text: 16px;
+$lh-text: 20px;
+$fz-heading: 40px;
+$fz-text-m: 16px;
+$lh-text-m: 20px;
+html, body{
+    --heightHeader: 90px;
+    @media (max-width: 991px){
+        --heightHeader: 65px;
+    }
+    
+}
+
+//============================================================//
+
+/*BOXED LAYOUT*/
+$container-max-width: 1920px;
+$container-width: 1000px; // tùy thuộc vào container của bản thiết kế mà chỉnh sửa cho hợp lý
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+
+$device-width: 1920px;

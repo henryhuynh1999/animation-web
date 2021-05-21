@@ -1,0 +1,205 @@
+// MIXINS
+// large desktop
+@mixin lg {
+	@media screen and (max-width: $lg-max) {
+		@content;
+	}
+}
+// desktop
+@mixin md {
+	@media screen and (max-width: $md-max) {
+		@content;
+	}
+}
+// tablet
+@mixin sm {
+	@media screen and (max-width: $sm-max) {
+		@content;
+	}
+}
+// mobile
+@mixin xs {
+	@media screen and (max-width: $xs-max) {
+		@content;
+	}
+}
+// small mobile
+@mixin xxs {
+	@media (max-width: $xxs-max) {
+		@content;
+	}
+}
+// desktop landscape
+@mixin mdX {
+	@media screen and (max-width: $md-max) and (orientation: landscape) {
+		@content;
+	}
+}
+// tablet landscape
+@mixin smX {
+	@media screen and (max-width: $sm-max) and (orientation: landscape) {
+		@content;
+	}
+}
+// mobile landscape
+@mixin xsX {
+	@media screen and (max-width: $xs-max) and (orientation: landscape) {
+		@content;
+	}
+}
+
+@mixin maxW($args) {
+	@media (max-width: $args) {
+		@content;
+	}
+}
+@mixin minW($args) {
+	@media (min-width: $args) {
+		@content;
+	}
+}
+@mixin minH($args) {
+	@media (min-height: $args) {
+		@content;
+	}
+}
+@mixin maxH($args) {
+	@media (max-height: $args) {
+		@content;
+	}
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	animation: #{$str};
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+}
+@mixin transform($args) {
+	transform: $args;
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	-o-transform: $args;
+}
+
+@mixin transform-origin($args) {
+	transform-origin: $args;
+	-webkit-transform-origin: $args;
+	-moz-transform-origin: $args;
+	-ms-transform-origin: $args;
+	-o-transform-origin: $args;
+}
+@mixin transition-delay($args) {
+	transition-delay: $args;
+	-webkit-transition-delay: $args;
+	-moz-transition-delay: $args;
+	-ms-transition-delay: $args;
+	-o-transition-delay: $args;
+}
+
+@mixin transition($args) {
+	transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+}
+@mixin text($font-size, $font-family, $line-height, $color, $text-transform) {
+	font-size: $font-size;
+	font-family: $font-family;
+	line-height: $line-height;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+@mixin mid($flex: false) {
+	@if $flex == false {
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		position: absolute;
+	} @else {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@mixin midimg($maxwidth: initial) {
+	max-width: $maxwidth;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	position: absolute;
+	@include mid();
+}
+
+@mixin fullscreen($fixed: false) {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	@if $fixed {
+		position: fixed;
+	} @else {
+		position: absolute;
+	}
+}
+
+@mixin visible($hidden: 1) {
+	@if $hidden == 1 {
+		opacity: 1;
+		pointer-events: visible;
+	} @else {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+@mixin br($radius) {
+	border-radius: $radius;
+	background-clip: padding-box;
+}
+
+@mixin overtext($lines) {
+	display: -webkit-inline-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin customscroll($width: 5px, $bgTrack: #000, $bgThumb: #ddd) {
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+	&::-webkit-scrollbar-track {
+		background: $bgTrack;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $bgThumb;
+	}
+}
+@keyframes animationName{
+	from {top: 0;}
+	to {top: 15px;}
+}

@@ -1,0 +1,125 @@
+@-ms-viewport {
+    width: $device-width;
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+html,
+body {
+    width: auto;
+    height: auto;
+    max-width: $container-max-width;
+    margin: auto;
+    @include text($fz-text, $font-main, $lh-text, $gray-cl, none);
+    @media (max-width: 415px){
+        @include text(12px, $font-main, $lh-text, $gray-cl, none); 
+    }
+    background: $white-cl;
+    position: relative;
+    @include customscroll();
+    --pdSection: 90px;
+    @media (max-width: 991px){
+        --pdSection: 60px;
+    }
+    @media (max-width: 767px){
+        --pdSection: 30px;
+    }
+    
+    main{
+        width: 100%;
+        margin: auto;
+        position: relative;
+        .section{
+            width: 100%;
+        }
+            .pd{
+                padding: var(--pdSection) 0;
+            }
+    }
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .container-fluid {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .no-gap > .col,
+    .no-gap > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    @media (min-width: $xxs-min) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: $xs-min) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: $sm-min) {
+        .container {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: $md-min) {
+        .container {
+            max-width: $container-width;
+        }
+    }
+
+    .mainwrapper {
+        width: 100%;
+        margin: auto;
+    }
+    @include lg {
+        // CSS responsive large desktop
+    }
+    @include md {
+        // CSS responsive desktop
+    }
+    @include sm {
+        // CSS responsive tablet
+    }
+    @include xs {
+        // CSS responsive mobile
+    }
+    @include xxs {
+        // CSS responsive small mobile
+    }
+}
+@media (max-width: 991px){
+    .mainwrapper{
+        padding-top: calc(var(--heightHeader) - 1px);
+    }
+    
+}

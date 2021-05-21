@@ -1,0 +1,80 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+}
+
+        .botton{
+            display: inline-flex;
+            position: relative;
+            font-family: pb;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: $black-cl;
+            text-transform: uppercase;
+            i{
+                margin-left: 10px;
+                @include transform(translateX(0));
+                @include transition($t);
+            }
+            &:after{
+                content: "";
+                width: 35px;
+                height: 1px;
+                background: $yellow-cl;
+                display: block;
+                position: absolute;
+                bottom: 1px;
+                @include transition($t);
+            }
+            &:hover{
+                i{
+                    @include transform(translateX(50%)); 
+                    @include transition($t);
+                }
+                &:after{
+                    width: 0;
+                    @include transition($t);
+                }
+            }
+      
+}       
+        .btn{
+            border: 1px solid #fff;
+                    padding: 12px 20px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    letter-spacing: 2px;
+                    @include transition($t);
+                    &:hover{
+                        background-color: $yellow-cl;
+                        @include transition($t);
+                    }
+                    
+        }
+@media (max-width: 991px){
+    .botton{
+        i{
+            display: none;
+        }
+    }
+    .btn{
+        letter-spacing: 1px;
+    }
+}
+@media (max-width: 767px){
+    .botton{
+        font-size: 10px;
+        &:after{
+            width: 25px;
+            height: 1.5px;
+        }
+    }
+}
+@media (max-width: 415px){
+    .btn{
+        font-size: 12px;
+    }
+}

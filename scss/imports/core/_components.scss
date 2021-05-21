@@ -1,0 +1,120 @@
+// css components
+
+
+.textbox{
+                width: 100%;
+               
+                   .titlemain{
+                    font-family: pb;
+                    font-size: $fz-heading;
+                    text-transform: uppercase;
+                    color: $text-cl;
+                    display: inline-flex;
+                    align-items: center;
+                    letter-spacing: 2px;
+                    line-height: 40px;
+                    
+                }
+                p{
+                    @include overtext(3);
+                    font-family: pr;
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                }
+                 
+            }
+.--left{
+    position: relative;
+    .titlemain{
+        margin-left: var(--pd-textbx-l);
+        &:before{
+            position: absolute;
+            content: "";
+            background: $text-cl;
+            width: var(--pd-textbx);
+            height: 1px;
+            margin-right: calc(var(--pd-textbx-l) - var(--pd-textbx));
+            display: flex;
+            left: 0;
+                        
+        }
+    }
+}   
+.pupupVideo{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(20, 20, 20, 0.7);
+    display: none;
+    z-index: 202;
+    align-items: center;
+    justify-content: center;
+    @include transition($t);
+    --widthVideo: 60vw;
+    .pupupVideo__container{
+        position: relative;
+        width: var(--widthVideo);
+        height: calc(var(--widthVideo)*9/16);
+        iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #fff;
+        
+        }
+        .close{
+            cursor: pointer; 
+            font-size: 35px;
+            color: #fff;
+            position: absolute;
+            right: -25px;
+            top: -25px;
+        }
+    }
+    &.active{
+        display: flex;
+    }
+}                
+@media (max-width: 991px){
+    .textbox{
+        .titlemain{
+            font-size: 30px;
+                margin: 0;
+                &:after, &:before{
+                    display: none;
+                }
+            
+          
+        }
+        p{
+            margin: 10px 0;
+        }
+        .botton{
+            letter-spacing: 1px;
+        }
+    }
+    .pupupVideo{
+     --widthVideo: 80vw;
+    }
+}
+@media (max-width: 767px){
+}
+@media (max-width: 575px){
+}
+@media (max-width: 415px){
+    .textbox{
+        .titlemain{
+            font-size: 24px;
+            line-height: 30px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+}

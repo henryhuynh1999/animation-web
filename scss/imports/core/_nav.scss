@@ -1,0 +1,47 @@
+// css navigator (Menu)
+
+    .menubox{
+        position: fixed;
+        width: 100vw;
+        height: calc(100vh - var(--heightHeader));
+        top: var(--heightHeader );
+        background: #222;
+        z-index: 201;
+        display: none;
+        @include transform(translateX(100%));
+        @include transition(0.5s $cubic);
+        &.active{
+            display: inherit;
+            @include transform(translateX(0%));
+            @include transition(0.5s $cubic);
+
+        }
+        ul{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+            li{
+                @include transition($t);
+                width: 100%;
+                padding: 10px 0px;
+                a{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: $fz-text;
+                line-break: 22px;
+                color: #fff;
+                &:hover, &.active{
+                color: $yellow-cl;
+                @include transition($t);     
+                }
+         
+                }
+            }
+        }
+    }
+

@@ -1,0 +1,21 @@
+/* Core variables and mixins*/
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/core/mixins";
+@import "imports/core/layouts";
+@import "imports/core/elements";
+@import "imports/core/components";
+@import "imports/core/libs";
+@import "imports/core/loading";
+@import "imports/core/bootstrap_mini"; // Nếu không Responsive bằng Boostrap 4 Grid thì không cần import vào.
+
+/* Navigation, header, footer*/
+@import "imports/core/header";
+@import "imports/core/nav";
+@import "imports/core/footer";
+
+/* Pages*/
+@import "imports/pages/home";
+@import "imports/pages/contact";
+@import "imports/pages/detail";
+// Test
